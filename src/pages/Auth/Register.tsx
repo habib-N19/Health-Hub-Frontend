@@ -7,11 +7,13 @@ import { FieldValues } from "react-hook-form";
 import { toast } from "sonner";
 import { useDispatch } from "react-redux";
 import { setDefaultValue } from "../../redux/features/auth/authSlice";
+import { useRegisterMutation } from "../../redux/features/auth/authApi";
 
 
 const Register = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const [register] = useRegisterMutation();
     const defaultValues = {
         name: "admin",
         email: `admin${Math.floor(Math.random() * 100)}@admin.com`,
@@ -21,8 +23,8 @@ const Register = () => {
     const onSubmit = async (data: FieldValues) => {
         const toastId = toast.loading("Registering...");
         try {
-            console.log('data', data);
 
+            await register({ name: data.name, email: data.email, password: data.password }).unwrap();
             toast.success("Registered successfully", { id: toastId, duration: 3000 });
             dispatch(setDefaultValue({ email: data.email, password: data.password }));
             navigate('/login');

@@ -18,10 +18,7 @@ const Login = () => {
     const dispatch = useDispatch();
     const defaultValues = useSelector((state: RootState) => state.auth.defaultValues)
     console.log('default values', defaultValues);
-    // const defaultValues = {
-    //     email: "admin@admin.com",
-    //     password: "123123"
-    // }
+
     const [login] = useLoginMutation();
     const onSubmit = async (data: FieldValues) => {
         const toastId = toast.loading("Logging in...");
