@@ -1,15 +1,9 @@
-
-
-
+import MainLayout from "./components/Layout/MainLayout"
 
 function App() {
 
-
   return (
-    <>
-      <h1>App</h1>
-
-    </>
+    <MainLayout />
   )
 }
 
