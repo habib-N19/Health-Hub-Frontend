@@ -3,6 +3,7 @@ import App from "../App";
 import { generateRoute } from "../utils/routeGenerator";
 import { dashboardRoutes } from "./dashboard.routes";
 import Login from "../pages/Auth/Login";
+import Register from "../pages/Auth/Register";
 
 const router = createBrowserRouter(
     [
@@ -21,7 +22,7 @@ const router = createBrowserRouter(
         },
         {
             path: '/register',
-            element: <h3>Register</h3>
+            element: <Register />
         }
     ]
 )

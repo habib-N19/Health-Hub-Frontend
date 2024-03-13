@@ -6,4 +6,8 @@ export type TUser = {
 export type TAuthState = {
 	user: null | TUser;
 	token: null | string;
+	defaultValues?: {
+		email: string;
+		password: string;
+	};
 };

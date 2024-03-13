@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useLoginMutation } from "../../redux/features/auth/authApi";
 import { FieldValues } from "react-hook-form";
@@ -9,15 +9,19 @@ import { setUser } from "../../redux/features/auth/authSlice";
 import { Button, Row } from "antd";
 import AuthForm from "../../components/inputForm/AuthForm";
 import FormInput from "../../components/inputForm/FormInput";
+import SectionTitle from "../../components/SectionTitle/SectionTitle";
+import { RootState } from "../../redux/store";
 
 
 const Login = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const defaultValues = {
-        email: "admin@admin.com",
-        password: "123123"
-    }
+    const defaultValues = useSelector((state: RootState) => state.auth.defaultValues)
+    console.log('default values', defaultValues);
+    // const defaultValues = {
+    //     email: "admin@admin.com",
+    //     password: "123123"
+    // }
     const [login] = useLoginMutation();
     const onSubmit = async (data: FieldValues) => {
         const toastId = toast.loading("Logging in...");
@@ -42,7 +46,7 @@ const Login = () => {
     return (
         <Row justify='center' align='middle' style={{ height: '100vh' }}>
             <AuthForm onSubmit={onSubmit} defaultValues={defaultValues}>
-                <h2 style={{ textAlign: 'center' }}>Login</h2>
+                <SectionTitle title="Login" />
                 <FormInput type="email" label="Email" name="email" />
                 <FormInput type="password" label="Password" name="password" />
                 <Button htmlType="submit" type="primary">Login</Button>
