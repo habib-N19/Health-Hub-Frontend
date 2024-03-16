@@ -44,13 +44,13 @@ const NavBar = () => {
             style={{
                 position: 'sticky',
                 top: 0,
-                zIndex: 1,
-                width: '100%',
+                zIndex: 6,
+                // width: '100%',
                 display: 'flex',
                 alignItems: 'center',
                 // justifyContent: 'space-between',
                 color: '#fff',
-                paddingInline: 48,
+                // paddingInline: 48,
                 backgroundColor: '#4096ff',
 
             }}

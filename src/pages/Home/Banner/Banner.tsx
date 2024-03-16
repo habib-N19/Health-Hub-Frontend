@@ -11,11 +11,14 @@ const Banner = () => {
         background: '#364d79',
     };
     return (
+
+
         <Carousel autoplay>
             <div><BannerContent style={contentStyle} /></div>
             <div><BannerContent style={contentStyle} /></div>
             <div><BannerContent style={contentStyle} /></div>
         </Carousel>
+
     );
 };
 

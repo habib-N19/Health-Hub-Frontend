@@ -6,7 +6,7 @@ import FooterSection from "../footer/Footer";
 const { Content } = Layout
 const MainLayout = () => {
     return (
-        <Layout>
+        <Layout style={{ maxWidth: '100vw' }}>
             <NavBar />
             <Content>
                 <Outlet />
