@@ -1,16 +1,17 @@
 
 import { Layout } from "antd"
 import { Outlet } from "react-router-dom"
-const { Header, Content, Footer } = Layout
+import NavBar from "../navbar/NavBar"
+import FooterSection from "../footer/Footer";
+const { Content } = Layout
 const MainLayout = () => {
     return (
         <Layout>
-            <Header>Header</Header>
+            <NavBar />
             <Content>
-                <h1>Main Layout</h1>
                 <Outlet />
             </Content>
-            <Footer>Footer</Footer>
+            <FooterSection />
         </Layout>
     );
 };

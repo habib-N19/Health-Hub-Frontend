@@ -4,12 +4,20 @@ import { generateRoute } from "../utils/routeGenerator";
 import { dashboardRoutes } from "./dashboard.routes";
 import Login from "../pages/Auth/Login";
 import Register from "../pages/Auth/Register";
+import HomePage from "../pages/Home/Home/HomePage";
 
 const router = createBrowserRouter(
     [
         {
             path: "/",
-            element: <App />
+            element: <App />,
+            children: [
+                {
+                    index: true,
+
+                    element: <HomePage />
+                }
+            ]
         },
         {
             path: '/dashboard',
