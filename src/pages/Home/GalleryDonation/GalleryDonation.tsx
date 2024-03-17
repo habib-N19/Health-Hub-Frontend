@@ -1,7 +1,9 @@
+import PhotoAlbum from "react-photo-album"
+import photos from "./photos"
 
 const GalleryDonation = () => {
     return (
-        <div>GalleryDonation</div>
+        <PhotoAlbum photos={photos} layout="rows" />
     )
 }
 
