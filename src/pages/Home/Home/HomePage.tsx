@@ -1,5 +1,6 @@
 import AboutUs from '../AboutUs/AboutUs';
 import Banner from '../Banner/Banner';
+import DisasterPreparednessProtocols from '../DisasterPrepardnessProtocols/DisasterPreparednessProtocols';
 import EmergencyResponseProtocols from '../EmergencyProtocol/EmergencyResponseProtocols';
 import GalleryDonation from '../GalleryDonation/GalleryDonation';
 import SupplySection from '../Supply/SupplySection';
@@ -15,6 +16,7 @@ const HomePage = () => {
             <GalleryDonation />
             <AboutUs></AboutUs>
             <EmergencyResponseProtocols></EmergencyResponseProtocols>
+            <DisasterPreparednessProtocols />
 
         </>
     );
