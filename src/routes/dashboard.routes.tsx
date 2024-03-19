@@ -1,8 +1,10 @@
+import DashboardRoot from "../pages/Dashboard/DashboardRoot/DashboardRoot";
+
 export const dashboardRoutes = [
     {
         name: "Dashboard",
-        path: "dashboard",
-        element: <h1>Dashboard</h1>,
+        path: "/dashboard",
+        element: <DashboardRoot />,
     },
 
 ];
