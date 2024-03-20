@@ -1,6 +1,7 @@
-import { Timeline } from 'antd';
+import { Typography, Timeline } from 'antd';
 
 
+const { Title } = Typography;
 const EmergencyResponseProtocols = () => {
     const emergencyResponseProtocols = [
         {
@@ -23,8 +24,8 @@ const EmergencyResponseProtocols = () => {
     ];
 
     return (
-        <div style={{ maxWidth: '1200px', width: '90vw', margin: '0 auto', paddingTop: '60px' }}>
-            <h1>Emergency Response Protocols</h1>
+        <div style={{ maxWidth: '1200px', width: '90vw', margin: '0 auto', paddingTop: '60px', minHeight: '80vh' }}>
+            <Title level={1} style={{ textAlign: 'center', padding: '30px' }}>Emergency Response Protocols</Title>
             <Timeline
                 mode='alternate'
                 items={emergencyResponseProtocols}
