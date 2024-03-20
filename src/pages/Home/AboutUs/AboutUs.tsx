@@ -1,5 +1,6 @@
-import { Carousel } from "antd";
-import React from "react";
+import { Carousel, Col, Row, Typography } from "antd";
+const { Title, Paragraph } = Typography;
+
 type TSliderContent = {
     title: string;
     image: string;
@@ -34,47 +35,31 @@ const AboutUs = () => {
             image: "https://i.ibb.co/JnLY3R7/image.png",
             description: "Visual representation of a streamlined supply chain, emphasizing efficiency and reliability in delivering crucial medical supplies to those in need."
         }
-    ];
-    const sliderStyle: React.CSSProperties = {
-        display: 'flex',
-        flexDirection: 'row',
-        gap: '8px',
-        height: '400px',
-        margin: '0 auto',
-        width: '600px',
-        alignItems: 'center',
-        justifyContent: 'center'
-
-    }
-    const sliderContentStyle: React.CSSProperties = {
-        flex: 1,
-        // height: '400px'
-
-
-    }
+    ]
     return (
-        <div style={{ background: 'white', maxWidth: '1200px', margin: '0 auto', width: '80%', textAlign: 'center' }}>
-            <h3>Who are we</h3>
+        <div style={{ background: 'white', maxWidth: '1200px', margin: '0 auto', width: '90vw', padding: '30px', textAlign: 'center' }}>
+            <Title level={5}>Who are we</Title>
             <div>
-                <h1>Empowering Communities: Our Mission in Post-Disaster Health and Supply Chain Management</h1>
-                <p>Welcome to our platform dedicated to empowering communities in the aftermath of disasters. We are committed to ensuring the well-being of individuals through effective health and medical supply chain management. Explore our objectives, impact, and dedication to serving communities in need.</p>
+                <Title level={1}>Empowering Communities: Our Mission in Post-Disaster Health and Supply Chain Management</Title>
+                <Paragraph>Welcome to our platform dedicated to empowering communities in the aftermath of disasters. We are committed to ensuring the well-being of individuals through effective health and medical supply chain management. Explore our objectives, impact, and dedication to serving communities in need.</Paragraph>
             </div>
             <div style={{ marginTop: '40px' }}>
 
                 <Carousel autoplay>
                     {sliderContent.map((content, index) => (
-                        <>
-
-                            <div style={sliderStyle} key={index}>
-                                <div style={sliderContentStyle}>
-                                    <img style={{ maxWidth: "400px" }} src={content.image} alt={content.title} />
-                                </div>
-                                <div style={sliderContentStyle}>
-                                    <h3>{content.title}</h3>
-                                    <p>{content.description}</p>
-                                </div>
-                            </div>
-                        </>
+                        <div key={index}>
+                            <Row gutter={[16, 16]} justify="center" align="middle">
+                                <Col xs={24} md={12}>
+                                    <img style={{ maxWidth: "100%" }} src={content.image} alt={content.title} />
+                                </Col>
+                                <Col xs={24} md={12}>
+                                    <div style={{ textAlign: 'left' }}>
+                                        <h3>{content.title}</h3>
+                                        <p>{content.description}</p>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </div>
                     ))}
                 </Carousel>
 
