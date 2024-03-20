@@ -18,7 +18,6 @@ const baseQuery = fetchBaseQuery({
 		return headers;
 	},
 });
-// const baseQueryWithRefreshToken :BaseQueryFn<FetchArgs, BaseQueryApi, DefinitionType> = async (args, api, extraOptions) :Promise<any> => {
 
 export const baseApi = createApi({
 	reducerPath: "baseApi",

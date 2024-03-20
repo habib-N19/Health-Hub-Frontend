@@ -10,7 +10,7 @@ type SupplyCardProps = {
     detailUrl: string;
 }
 
-const SupplyCard = ({ imgUrl, title, category, amount, detailUrl }: SupplyCardProps) => {
+const TopSupplyCard = ({ imgUrl, title, category, amount, detailUrl }: SupplyCardProps) => {
     return (
         <Card
             // style={{ width: 300 }}
@@ -32,4 +32,4 @@ const SupplyCard = ({ imgUrl, title, category, amount, detailUrl }: SupplyCardPr
     )
 }
 
-export default SupplyCard
+export default TopSupplyCard

@@ -42,7 +42,7 @@ const NavBar = () => {
     return (
         <Header
             style={{
-                position: 'sticky',
+                // position: 'sticky',
                 top: 0,
                 zIndex: 6,
                 // width: '100%',

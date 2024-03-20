@@ -5,6 +5,8 @@ import { dashboardRoutes } from "./dashboard.routes";
 import Login from "../pages/Auth/Login";
 import Register from "../pages/Auth/Register";
 import HomePage from "../pages/Home/Home/HomePage";
+import Supplies from "../pages/Supplies/Supplies";
+import SupplyDetail from "../pages/Supplies/SupplyDetail";
 
 const router = createBrowserRouter(
     [
@@ -15,7 +17,22 @@ const router = createBrowserRouter(
                 {
                     index: true,
 
-                    element: <HomePage />
+                    element: <HomePage />,
+
+                },
+                {
+                    path: '/supplies',
+                    element: <Supplies />,
+
+                },
+                {
+                    path: '/supplies/top/:id',
+                    element: <SupplyDetail />,
+                }
+                ,
+                {
+                    path: '/supplies/:id',
+                    element: <SupplyDetail />,
                 }
             ]
         },

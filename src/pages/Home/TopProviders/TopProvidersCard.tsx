@@ -1,9 +1,18 @@
-import { AnimatePresence, motion, wrap } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { images } from "./image-data";
 import './topProvider.css';
+import { Card, Typography } from "antd";
+import { useTopProvidersQuery } from "../../../redux/features/homepageData/homePageDataApi";
+const { Text, Paragraph } = Typography;
+
 
 const TopProvidersCard = () => {
+    const [page, setPage] = useState(0);
+    const { data: donorData, isLoading } = useTopProvidersQuery({});
+    console.log(donorData, isLoading);
+    if (isLoading) return <div>Loading...</div>
+
+
     const variants = {
         enter: (direction: number) => {
             return {
@@ -25,23 +34,24 @@ const TopProvidersCard = () => {
         }
     };
 
-    const swipeConfidenceThreshold = 10000;
+    const swipeConfidenceThreshold = 1000;
     const swipePower = (offset: number, velocity: number) => {
         return Math.abs(offset) * velocity;
     };
-    const [[page, direction], setPage] = useState([0, 0]);
-    const imageIndex = wrap(0, images.length, page);
+
     const paginate = (newDirection: number) => {
-        setPage([page + newDirection, newDirection]);
+        setPage(page + newDirection);
     };
+
+    const currentDonor = donorData[page % donorData.length];
+
     return (
         <>
-            <AnimatePresence initial={false} custom={direction}>
-                <motion.img
+            <AnimatePresence initial={false} custom={page}>
+                <motion.div
                     key={page}
-                    className='topProviderImg'
-                    src={images[imageIndex]}
-                    custom={direction}
+                    className='topProviderContainer'
+                    custom={page}
                     variants={variants}
                     initial="enter"
                     animate="center"
@@ -53,7 +63,7 @@ const TopProvidersCard = () => {
                     drag="x"
                     dragConstraints={{ left: 0, right: 0 }}
                     dragElastic={1}
-                    onDragEnd={(e, { offset, velocity }) => {
+                    onDragEnd={(_e, { offset, velocity }) => {
                         const swipe = swipePower(offset.x, velocity.x);
 
                         if (swipe < -swipeConfidenceThreshold) {
@@ -62,14 +72,31 @@ const TopProvidersCard = () => {
                             paginate(-1);
                         }
                     }}
-                />
+                    style={{ overflow: 'hidden', backgroundColor: 'white' }}
+                >
+                    <Card className='topProviderCard' style={{ width: '100%', backgroundColor: 'transparent', backdropFilter: 'blur(50px)' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-around', width: '80%', margin: '0 auto', alignItems: 'center' }}>
+                            <div style={{ maxWidth: '50%', objectFit: 'cover' }} className='topProviderImageContainer'>
+                                <img style={{ maxWidth: '100%', objectFit: 'cover', height: '200px' }} src={currentDonor.imgUrl} alt="Donor" className='topProviderImage' />
+                            </div>
+                            <div className='topProviderContent'>
+                                <Text strong>Name: <Paragraph>{currentDonor.name}</Paragraph>
+                                </Text>
+                                <Text strong>Amount Donated:</Text>
+                                <Paragraph>${currentDonor.amount}</Paragraph>
+                                <Paragraph>"{currentDonor.quote}"</Paragraph>
+                            </div>
+                        </div>
+                    </Card>
+                </motion.div>
             </AnimatePresence>
             <div className="next" onClick={() => paginate(1)}>
                 {"‣"}
             </div>
             <div className="prev" onClick={() => paginate(-1)}>
                 {"‣"}
-            </div></>
+            </div>
+        </>
     );
 };
 
