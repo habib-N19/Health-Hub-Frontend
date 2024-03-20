@@ -5,7 +5,7 @@ const { Title, Text } = Typography;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const SupplyCard = ({ supplyItem }: { supplyItem: any }) => {
-    const { id, img, title, category, amount, viewDetailButton } = supplyItem;
+    const { _id, img, title, category, amount } = supplyItem;
 
     return (
         <Card
@@ -45,8 +45,8 @@ const SupplyCard = ({ supplyItem }: { supplyItem: any }) => {
                         alignItems: "center",
                     }}
                 >
-                    <Link to={`/supplies/${id}`}>
-                        <Button type="primary">{viewDetailButton.text}</Button>
+                    <Link to={`/supplies/${_id}`}>
+                        <Button type="primary">View Details</Button>
                     </Link>
                 </div>
             </div>
