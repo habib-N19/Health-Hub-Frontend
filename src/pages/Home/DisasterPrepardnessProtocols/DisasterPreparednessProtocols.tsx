@@ -1,4 +1,5 @@
-import { Col, Row } from 'antd';
+import { Col, Row, Typography } from 'antd';
+
 
 import DisasterPreparednessCard from './DisasterPreparednessCard';
 export type Resource = {
@@ -10,7 +11,7 @@ export type DisasterPreparednessResource = {
     category: string;
     resources: Resource;
 };
-
+const { Title, Paragraph } = Typography;
 const DisasterPreparednessProtocols = () => {
     const disasterPreparednessResources: DisasterPreparednessResource[] = [
         {
@@ -68,20 +69,15 @@ const DisasterPreparednessProtocols = () => {
     ];
 
     return (
-        <div style={{ maxWidth: '1200px', width: '80vw', margin: '20px auto', }}>
-            <h1 style={{ textAlign: 'center', margin: '40px 0', fontSize: '36px' }}>Disaster Preparedness Resources</h1>
-            {/* add a horizontral bar */}
-
-            <p style={{ textAlign: 'center', marginBottom: '20px', fontSize: '18px' }}>Explore valuable resources and tips for disaster preparedness to help communities better withstand and recover from disasters. Take proactive measures to mitigate the impact of emergencies.</p>
-            <Row style={{ margin: 0, }} gutter={16}>
-                {
-                    disasterPreparednessResources.map((resource: DisasterPreparednessResource, index: number) => (
-                        <Col key={index} span={12}>
-                            <DisasterPreparednessCard category={resource.category} resources={resource.resources} />
-                        </Col>
-                    ))
-                }
-
+        <div style={{ maxWidth: '1200px', width: '80vw', margin: '20px auto', backgroundColor: 'transparent' }}>
+            <Title style={{ textAlign: 'center', margin: '40px 0', fontSize: '36px' }}>Disaster Preparedness Resources</Title>
+            <Paragraph style={{ textAlign: 'center', marginBottom: '20px', fontSize: '18px' }}>Explore valuable resources and tips for disaster preparedness to help communities better withstand and recover from disasters. Take proactive measures to mitigate the impact of emergencies.</Paragraph>
+            <Row gutter={16} justify="center">
+                {disasterPreparednessResources.map((resource: DisasterPreparednessResource, index: number) => (
+                    <Col key={index} xs={24} sm={12} lg={12} xl={6}>
+                        <DisasterPreparednessCard category={resource.category} resources={resource.resources} />
+                    </Col>
+                ))}
             </Row>
         </div>
     );
