@@ -3,7 +3,7 @@ import { useState } from "react";
 import './topProvider.css';
 import { Card, Typography } from "antd";
 import { useTopProvidersQuery } from "../../../redux/features/homepageData/homePageDataApi";
-const { Text, Paragraph } = Typography;
+const { Text, Paragraph, Title } = Typography;
 
 
 const TopProvidersCard = () => {
@@ -80,11 +80,12 @@ const TopProvidersCard = () => {
                                 <img style={{ maxWidth: '100%', objectFit: 'cover', height: '200px' }} src={currentDonor.imgUrl} alt="Donor" className='topProviderImage' />
                             </div>
                             <div className='topProviderContent'>
-                                <Text strong>Name: <Paragraph>{currentDonor.name}</Paragraph>
+                                <Text strong>Name:
+                                    <Title level={3}>{currentDonor.name}</Title>
                                 </Text>
                                 <Text strong>Amount Donated:</Text>
-                                <Paragraph>${currentDonor.amount}</Paragraph>
-                                <Paragraph>"{currentDonor.quote}"</Paragraph>
+                                <Paragraph strong>${currentDonor.amount}</Paragraph>
+                                <Paragraph strong >"{currentDonor.quote}"</Paragraph>
                             </div>
                         </div>
                     </Card>
