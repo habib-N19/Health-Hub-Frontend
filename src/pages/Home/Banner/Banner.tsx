@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import CtaBtn from "../../../components/CtaBtn/CtaBtn";
 import React from "react";
 import { PlayCircleOutlined } from "@ant-design/icons";
-
+import { Typography } from "antd";
+const { Title, Paragraph } = Typography;
 const Banner = () => {
     const cardHeading: React.CSSProperties = {
         fontSize: "40px",
@@ -18,18 +19,44 @@ const Banner = () => {
         textAlign: "left",
     };
     return (
-        <div className="banner_container">
-            <div style={{ padding: "30px 0", width: "50%", margin: "0 auto" }}>
-                <h1 style={{}}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }} className="banner_container">
+            <div style={{ padding: "30px 0", width: "70%", margin: "0 auto" }}>
+                <Title level={1}>
                     Strengthening Communities After Disaster: A Health & Medical Supply
                     Platform
-                </h1>
-                <p>
+                </Title>
+                <Paragraph>
                     Building Hope, Resilience, and Community Support Through Efficient
                     Post-Disaster Health and Medical Supply Chain Management
-                </p>
+                </Paragraph>
+                <div
+                    className="sm_cta_container"
+                >
+                    <Link
+                        style={{
+                            background: "#1b0404",
+                            borderRadius: "9999px",
+                            padding: "8px 14px",
+                            color: "#ffffffd3",
+                        }}
+                        to="/"
+                    >
+                        Donate Now
+                    </Link>
+                    <div
+                        style={{
+                            background: "#dbcccc",
+                            borderRadius: "9999px",
+                            padding: "8px 14px",
+                            color: "#140202d2",
+                        }}
+                    >
+                        <PlayCircleOutlined /> Watch Video
+                    </div>
+                </div>
             </div>
             <div
+                className="banner_card_container"
                 style={{
                     display: "grid",
                     gridTemplateColumns: "repeat(5, 1fr)",

@@ -2,6 +2,7 @@
 import { Layout, Menu } from 'antd';
 import sidebarItemsGenerator from '../../utils/sidebarItemsGenerator';
 import { dashboardRoutes } from '../../routes/dashboard.routes';
+import { Link } from 'react-router-dom';
 
 const { Sider } = Layout;
 const Sidebar = () => {
@@ -19,7 +20,11 @@ const Sidebar = () => {
                     alignItems: 'center',
                 }}
             >
-                <h1>Logo</h1>
+                <div className="demo-logo" style={{ display: 'flex', alignItems: 'center' }} >
+                    <Link style={{ width: '44px', height: '44px' }} to='/'>
+                        <img style={{ width: '44px', height: '44px' }} src="logo.jpg" alt="logo" />
+                    </Link>
+                </div>
             </div>
             <Menu
                 // theme="light"

@@ -1,16 +1,23 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Button, Col, Row } from "antd";
+import { Button, Col, Row, Spin, Typography } from "antd";
 import React from "react";
 import TopSupplyCard from "./TopSupplyCard";
 import { Link } from "react-router-dom";
 import { useTopSuppliesQuery } from "../../../redux/features/supply/supplyApi";
 
-
+const { Title } = Typography;
 const TopSupplySection: React.FC = () => {
-    const { data, error, isLoading } = useTopSuppliesQuery({});
-    console.log(data, error, isLoading);
+    const { data, isLoading } = useTopSuppliesQuery({});
+    if (isLoading) return <Spin size="large" spinning />
+
     return (
         <Row style={{ margin: 0 }} gutter={8}>
+            <Col span={24}>
+                <Title level={2} style={{ textAlign: "center", margin: "4rem auto" }}>
+                    Top Supplies
+                </Title>
+            </Col>
+
             {data?.map((supply: any) => (
 
                 <Col key={supply.id} xs={24} md={8}>

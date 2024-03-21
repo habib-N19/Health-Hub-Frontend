@@ -209,3 +209,24 @@ textarea {
 	border: none;
 	border-radius: 5px;
 }
+
+@media screen and (max-width: 700px) {
+	.banner_card_container {
+		display: none;
+	}
+	.banner_card_container > div {
+		display: none;
+	}
+	.sm_cta_container {
+		display: flex;
+		flex-direction: flex;
+		gap: 10px;
+		justify-content: center;
+		margin: 30px;
+	}
+}
+@media screen and (min-width: 701px) {
+	.sm_cta_container {
+		display: none;
+	}
+}

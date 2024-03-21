@@ -1,71 +1,53 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Pie } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-interface Data1 {
-    color: string,
-    value: number
-}
-
 export const PieChart = ({ supplies }) => {
-    const data1: Data1[] = [
-        { color: "red", value: 12 },
-        { color: "blue", value: 40 },
-        { color: "Yellow", value: 7 },
-        { color: "Green", value: 15 },
-        { color: "Orange", value: 13 },
-    ];
 
-    const backgroundColor = [
-        "rgba(255, 99, 132, 0.2)",
-        "rgba(54, 162, 235, 0.2)",
-        "rgba(255, 206, 86, 0.2)",
-        "rgba(75, 192, 192, 0.2)",
-        "rgba(153, 102, 255, 0.2)",
-        "rgba(255, 159, 64, 0.2)",
-    ];
+    const generateRandomColor = () => {
+        const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+        return "#" + randomColor;
+    };
+    const categories = supplies.map((supply: { category: any; }) => supply.category);
+    const amounts = supplies.map((supply) => parseInt(supply.amount)); // Assuming amount is a string representing an integer
+
+    // Generating random colors for each category
+    const backgroundColors = categories.map(() => generateRandomColor());
 
     const data = {
-        labels: supplies.map((d) => d.category + " " + d.amount),
+        labels: categories,
         datasets: [
             {
-                label: "# of Votes",
-                data: supplies.map((d) => d.amount),
-                backgroundColor: backgroundColor,
-                borderColor: [
-                    "rgba(255, 99, 132, 1)",
-                    "rgba(54, 162, 235, 1)",
-                    "rgba(255, 206, 86, 1)",
-                    "rgba(75, 192, 192, 1)",
-                    "rgba(153, 102, 255, 1)",
-                    "rgba(255, 159, 64, 1)",
-                ],
+                data: amounts,
+                backgroundColor: backgroundColors,
                 borderWidth: 1,
             },
         ],
     };
+
+
     const options = {
         plugins: {
             legend: {
-                display: false, // Hides the legend
+                display: false,
             },
         },
     };
     return (
         <>
             <div className="pie-chart-container">
-                <div style={{ maxWidth: '400px' }}>
+                <div style={{ maxWidth: "400px" }}>
                     <Pie data={data} options={options} />
                 </div>
-                <div style={{ display: "flex", gap: "20px", flexDirection: "column", width: '200px', flexShrink: '0' }}>
+                <div style={{ display: "flex", gap: "20px", flexDirection: "column", width: "200px", flexShrink: "0" }}>
                     {supplies.map((data, index) => (
-                        <div>
-                            {" "}
+                        <div key={index}>
                             <span
                                 style={{
-                                    backgroundColor: `${backgroundColor[index]}`,
+                                    backgroundColor: backgroundColors[index],
                                     padding: "3px 6px",
                                     fontSize: "20px",
                                 }}
