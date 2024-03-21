@@ -9,7 +9,6 @@ const { Text, Paragraph, Title } = Typography;
 const TopProvidersCard = () => {
     const [page, setPage] = useState(0);
     const { data: donorData, isLoading } = useTopProvidersQuery({});
-    console.log(donorData, isLoading);
     if (isLoading) return <div>Loading...</div>
 
 

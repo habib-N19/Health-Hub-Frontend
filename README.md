@@ -1,7 +1,7 @@
 # Post-Disaster Community Health and Medical Supply Chain Platform
 
-Live Demo: [Demo URL](https://your-demo-url.com)
-Server Repository: [Server Repo](https://link-to-server-repo.com)
+Live Demo: [Live URL](https://healthhub-991c2.web.app)
+Server Repository: [Server Repo](https://github.com/Porgramming-Hero-web-course/l2-b2-assignment-6-backend-habib-N19.git)
 
 ## Overview
 

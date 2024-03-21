@@ -8,7 +8,7 @@ import { useTopSuppliesQuery } from "../../../redux/features/supply/supplyApi";
 const { Title } = Typography;
 const TopSupplySection: React.FC = () => {
     const { data, isLoading } = useTopSuppliesQuery({});
-    if (isLoading) return <Spin size="large" spinning />
+    if (isLoading) return <Spin size="large" />
 
     return (
         <Row style={{ margin: 0 }} gutter={8}>
