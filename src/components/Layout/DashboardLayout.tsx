@@ -7,7 +7,10 @@ const DashboardLayout = () => {
     return (
         <Layout style={{ maxWidth: '100vw' }}>
             {/* <NavBar /> */}
-            <Sidebar />
+            <div style={{ position: 'relative' }}>
+
+                <Sidebar />
+            </div>
             <Content>
                 <Outlet />
             </Content>

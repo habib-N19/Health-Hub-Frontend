@@ -13,6 +13,7 @@ export const supplyApi = baseApi.injectEndpoints({
 				url: "/supplies",
 				method: "GET",
 			}),
+			providesTags: ["Supply"],
 		}),
 	}),
 });

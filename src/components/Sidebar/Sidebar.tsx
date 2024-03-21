@@ -6,8 +6,9 @@ import { dashboardRoutes } from '../../routes/dashboard.routes';
 const { Sider } = Layout;
 const Sidebar = () => {
     const sidebarItems = sidebarItemsGenerator(dashboardRoutes)
+    console.log(sidebarItems);
     return (
-        <Sider breakpoint='lg' collapsedWidth={0}>
+        <Sider breakpoint='lg' style={{ backgroundColor: 'transparent', position: 'sticky' }} collapsedWidth={0}>
             <div
                 style={{
                     color: 'black',
@@ -21,9 +22,10 @@ const Sidebar = () => {
                 <h1>Logo</h1>
             </div>
             <Menu
-                // theme="dark"
+                // theme="light"
                 mode="inline"
-                defaultSelectedKeys={['4']}
+                style={{ minWidth: 0, backgroundColor: '#4096ff', }}
+                defaultSelectedKeys={['/dashboard']}
                 items={sidebarItems}
             />
         </Sider>
