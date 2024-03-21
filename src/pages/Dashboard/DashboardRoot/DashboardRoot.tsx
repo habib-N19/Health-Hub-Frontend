@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { PieChart } from "../../../components/pieChart/PieChart";
 import { Card, Typography, Row, Col, Spin, Divider } from 'antd';
 import { useSuppliesQuery } from "../../../redux/features/supply/supplyApi";
+import { Key, ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from "react";
 
 const { Title } = Typography;
 
@@ -17,7 +19,7 @@ const DashboardRoot = () => {
                 <Col xs={24} sm={24} md={24} lg={24} xl={24}>
                     <Divider orientation="left">Supplies</Divider>
                     <Row gutter={[16, 16]} justify="center">
-                        {supplies?.map((supply) => (
+                        {supplies?.map((supply: { id: Key | null | undefined; title: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; amount: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; }) => (
                             <Col key={supply.id} xs={24} sm={12} md={8} lg={6} xl={4}>
                                 <Card className="content-box" style={{ borderRadius: '10px', height: '100%' }}>
                                     <h3>{supply.title}</h3>

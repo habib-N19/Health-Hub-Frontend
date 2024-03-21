@@ -11,7 +11,7 @@ interface FormData {
 }
 
 const CreateSupply: React.FC = () => {
-    const { register, handleSubmit, reset } = useForm<FormData>();
+    const { register, handleSubmit } = useForm<FormData>();
     const [createSupply, { isLoading }] = useCreateSupplyMutation();
 
 

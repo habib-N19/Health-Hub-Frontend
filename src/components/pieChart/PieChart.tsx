@@ -5,14 +5,14 @@ import { Pie } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export const PieChart = ({ supplies }) => {
+export const PieChart = ({ supplies }: { supplies: any[] }) => {
 
     const generateRandomColor = () => {
         const randomColor = Math.floor(Math.random() * 16777215).toString(16);
         return "#" + randomColor;
     };
     const categories = supplies.map((supply: { category: any; }) => supply.category);
-    const amounts = supplies.map((supply) => parseInt(supply.amount)); // Assuming amount is a string representing an integer
+    const amounts = supplies.map((supply) => parseInt(supply.amount));
 
     // Generating random colors for each category
     const backgroundColors = categories.map(() => generateRandomColor());

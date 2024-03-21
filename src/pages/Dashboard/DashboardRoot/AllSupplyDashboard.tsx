@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { DeleteFilled } from "@ant-design/icons";
 import { useDeleteSupplyMutation, useUpdateSupplyMutation } from "../../../redux/features/dashboard/dashboardCrudApi";
 import { useSuppliesQuery } from "../../../redux/features/supply/supplyApi";
-import { useState } from "react";
+import { Key, useState } from "react";
 import { Button, Form, Modal } from "antd";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
@@ -11,14 +13,11 @@ const AllSupplyDashboard = () => {
     const [deleteSupply] = useDeleteSupplyMutation();
     const [updateSupply] = useUpdateSupplyMutation();
     const [open, setOpen] = useState(false);
-    const [confirmLoading, setConfirmLoading] = useState(false);
+    const [confirmLoading] = useState(false);
 
     const { register, handleSubmit } = useForm();
     if (isLoading) return <div>Loading...</div>;
 
-    const showModal = () => {
-        setOpen(true);
-    };
 
     const handleOk = () => {
         setOpen(false);
@@ -32,7 +31,7 @@ const AllSupplyDashboard = () => {
         setOpen(false);
     };
 
-    const onSubmit = async (formData) => {
+    const onSubmit = async (formData: Record<string, any>) => {
         try {
             // Extract _id from formData
             const { _id, ...supplyData } = formData;
@@ -47,7 +46,7 @@ const AllSupplyDashboard = () => {
         }
     };
 
-    const deleteSupplies = (_id) => {
+    const deleteSupplies = (_id: any) => {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         deleteSupply(_id);
         console.log("delete", _id);
@@ -71,7 +70,7 @@ const AllSupplyDashboard = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {data.map((item, index) => (
+                            {data.map((item: any, index: Key | null | undefined) => (
                                 <tr key={index}>
                                     <td>{item.title}</td>
                                     <td>{item.category}</td>
