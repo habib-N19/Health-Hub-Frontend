@@ -4,6 +4,7 @@ import { useSuppliesQuery } from "../../../redux/features/supply/supplyApi";
 import { useState } from "react";
 import { Button, Form, Modal } from "antd";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 const AllSupplyDashboard = () => {
     const { data, isLoading } = useSuppliesQuery({});
@@ -55,6 +56,9 @@ const AllSupplyDashboard = () => {
     return (
         <>
             <div className="title">Supplies</div>
+            <Link
+                style={{ padding: '30px' }}
+                to='/dashboard/create-supply'>Add Supply</Link>
             <div className="supliesContainer" style={{ marginTop: "10px" }}>
                 <div style={{ overflowX: "auto", width: "100%" }}>
                     <table style={{ width: "100%" }}>
@@ -125,7 +129,7 @@ const AllSupplyDashboard = () => {
                             ))}
                         </tbody>
                     </table>
-                </div>
+                    BL</div>
             </div>
         </>
     );

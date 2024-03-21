@@ -19,7 +19,7 @@ const dashboardCrudApi = baseApi.injectEndpoints({
 		}),
 		createSupply: builder.mutation({
 			query: (supply) => ({
-				url: "/create-supply",
+				url: "/supplies",
 				method: "POST",
 				body: supply,
 			}),
