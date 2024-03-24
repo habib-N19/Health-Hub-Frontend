@@ -76,7 +76,31 @@ Interactive form allowing users to contribute new supply posts with relevant inf
 
 Enhanced visual appeal and interactivity using animations implemented with the Framer Motion library.
 
-## Implementation Guidelines
+# New Features
+
+## Dynamic Theme Switching
+
+Enable users to switch between different themes (e.g., light mode, dark mode) based on their preferences.
+
+## Donors Leaderboard
+
+Develop a leaderboard to showcase the top donors who have made significant contributions to the relief efforts. Display donor names or usernames along with their donation amounts to recognize their generosity.
+URL: /leaderboard
+
+## Community Gratitude Wall
+
+Create a community gratitude wall where users can post comments of appreciation for the support they've received during difficult times. Allow users to post comments expressing their gratitude.
+URL: /community
+
+## Interactive Testimonial
+
+Donors will be able to post testimonials about the donation posts.
+URL: /dashboard/create-testimonial
+
+## Digital Volunteer Hub
+
+Develop a digital hub where users can discover and sign up for virtual volunteer opportunities. Create a form where users can provide their information like their email, phone number, location etc. Show the volunteer lists in the About Us page in a section named Our Volunteers.
+URL: /volunteer
 
 ### Database Management
 
