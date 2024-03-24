@@ -25,10 +25,18 @@ const dashboardCrudApi = baseApi.injectEndpoints({
 			}),
 			invalidatesTags: ["Supply"],
 		}),
+		createTestimonial: builder.mutation({
+			query: (testimonial) => ({
+				url: "/testimonials",
+				method: "POST",
+				body: testimonial,
+			}),
+		}),
 	}),
 });
 export const {
 	useDeleteSupplyMutation,
 	useUpdateSupplyMutation,
 	useCreateSupplyMutation,
+	useCreateTestimonialMutation,
 } = dashboardCrudApi;

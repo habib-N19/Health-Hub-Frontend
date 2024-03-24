@@ -1,6 +1,7 @@
 import CreateSupply from "../pages/Dashboard/CreateSupplyPage/CreateSupply";
 import AllSupplyDashboard from "../pages/Dashboard/DashboardRoot/AllSupplyDashboard";
 import DashboardRoot from "../pages/Dashboard/DashboardRoot/DashboardRoot";
+import Testimonial from "../pages/Dashboard/Testimonial/Testimonial";
 
 export const dashboardRoutes = [
     {
@@ -19,11 +20,12 @@ export const dashboardRoutes = [
         name: 'Create Supply',
         path: '/dashboard/create-supply',
         element: <CreateSupply />
+    },
+    {
+        name: 'Create Testimonial',
+        path: '/dashboard/create-testimonial',
+        element: <Testimonial />
     }
-    // {
-    //     name: "Supplies Detail",
-    //     path: "/dashboard/supplies/:id",
-    //     element: <DashboardRoot />,
-    // }
+
 
 ];
