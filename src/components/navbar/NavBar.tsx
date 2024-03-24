@@ -68,11 +68,15 @@ const NavBar = () => {
                     token ? (
                         <>
                             <Menu.Item key="dashboard"><Link to='/dashboard'>Dashboard</Link></Menu.Item>
+                            <Menu.Item key="community"><Link to='/community'>Community</Link></Menu.Item>
+                            <Menu.Item key="volunteer"><Link to='/volunteer'>Volunteer</Link></Menu.Item>
                             <Menu.Item onClick={handleLogOut} key="logout">Logout</Menu.Item>
                         </>
                     ) :
+
                         <Menu.Item key="login"><Link to='/login'>Login</Link></Menu.Item>
                 }
+                <Menu.Item key="about"><Link to='/about'>About Us</Link></Menu.Item>
                 <Menu.Item key="theme" style={{ backgroundColor: 'transparent' }}>
                     <Switch
 
@@ -81,6 +85,7 @@ const NavBar = () => {
                         checkedChildren="Dark"
                         unCheckedChildren="Light"
                     /></Menu.Item>
+
             </Menu>
         </Header>
     );
