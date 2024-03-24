@@ -29,7 +29,7 @@ const SupplyDetail = () => {
     };
 
     return (
-        <div style={{ padding: '20px', backgroundColor: '#f0f2f5', minHeight: '100vh' }}>
+        <div style={{ padding: '20px', minHeight: '100vh' }}>
             <Button type="primary" style={{ marginBottom: "1rem" }}>
                 <Link to="/supplies">Back to Supplies</Link>
             </Button>

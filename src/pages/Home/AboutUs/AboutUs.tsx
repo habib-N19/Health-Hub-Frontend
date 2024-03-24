@@ -37,7 +37,7 @@ const AboutUs = () => {
         }
     ]
     return (
-        <div style={{ background: 'white', maxWidth: '1200px', margin: '0 auto', width: '90vw', padding: '30px', textAlign: 'center' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', width: '90vw', padding: '30px', textAlign: 'center' }}>
             <Title level={5}>Who are we</Title>
             <div>
                 <Title level={1}>Empowering Communities: Our Mission in Post-Disaster Health and Supply Chain Management</Title>

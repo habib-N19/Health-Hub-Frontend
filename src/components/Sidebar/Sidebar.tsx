@@ -12,8 +12,8 @@ const Sidebar = () => {
         <Sider breakpoint='lg' style={{ backgroundColor: 'transparent', position: 'sticky' }} collapsedWidth={0}>
             <div
                 style={{
-                    color: 'black',
-                    backgroundColor: 'white',
+                    // color: 'black',
+                    // backgroundColor: 'white',
                     height: '4rem',
                     display: 'flex',
                     justifyContent: 'center',
@@ -29,7 +29,7 @@ const Sidebar = () => {
             <Menu
                 // theme="light"
                 mode="inline"
-                style={{ minWidth: 0, backgroundColor: '#4096ff', }}
+                // style={{ minWidth: 0, backgroundColor: '#4096ff', }}
                 defaultSelectedKeys={['/dashboard']}
                 items={sidebarItems}
             />

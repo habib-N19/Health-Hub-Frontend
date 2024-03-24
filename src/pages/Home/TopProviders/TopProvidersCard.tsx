@@ -71,7 +71,7 @@ const TopProvidersCard = () => {
                             paginate(-1);
                         }
                     }}
-                    style={{ overflow: 'hidden', backgroundColor: 'white' }}
+                    style={{ overflow: 'hidden' }}
                 >
                     <Card className='topProviderCard' style={{ width: '100%', backgroundColor: 'transparent', backdropFilter: 'blur(50px)' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-around', width: '80%', margin: '0 auto', alignItems: 'center' }}>

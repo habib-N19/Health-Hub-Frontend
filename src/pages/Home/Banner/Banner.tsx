@@ -34,10 +34,10 @@ const Banner = () => {
                 >
                     <Link
                         style={{
-                            background: "#1b0404",
+                            // background: "#1b0404",
                             borderRadius: "9999px",
                             padding: "8px 14px",
-                            color: "#ffffffd3",
+                            // color: "#ffffffd3",
                         }}
                         to="/"
                     >
@@ -104,10 +104,10 @@ const Banner = () => {
                     >
                         <Link
                             style={{
-                                background: "#1b0404",
+                                // background: "#1b0404",
                                 borderRadius: "9999px",
                                 padding: "8px 14px",
-                                color: "#ffffffd3",
+                                // color: "#ffffffd3",
                             }}
                             to="/"
                         >
@@ -115,10 +115,10 @@ const Banner = () => {
                         </Link>
                         <div
                             style={{
-                                background: "#dbcccc",
+                                // background: "#dbcccc",
                                 borderRadius: "9999px",
                                 padding: "8px 14px",
-                                color: "#140202d2",
+                                // color: "#140202d2",
                             }}
                         >
                             <PlayCircleOutlined /> Watch Video

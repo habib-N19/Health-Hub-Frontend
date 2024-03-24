@@ -6,7 +6,7 @@ const { Title, Paragraph } = Typography;
 
 const FooterSection = () => {
     return (
-        <Footer style={{ backgroundColor: '#a5bee2', padding: '20px', maxWidth: '1200px', width: '90vw', margin: '0 auto', borderRadius: '8px' }}>
+        <Footer style={{ padding: '20px', maxWidth: '1200px', width: '90vw', margin: '0 auto', borderRadius: '8px' }}>
             <Row justify="center" gutter={[16, 16]}>
                 <Col xs={24} sm={12} md={8} lg={6} style={{ textAlign: 'center' }}>
                     <Title level={4}>Contact Us</Title>

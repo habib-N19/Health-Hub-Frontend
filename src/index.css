@@ -8,7 +8,7 @@
 	width: 100vw;
 	min-height: 100vh;
 	max-width: 1200px;
-	background-color: #ffffff;
+	/* background-color: #ffffff; */
 	padding: 20px;
 	margin-bottom: 40px;
 	text-align: center;
@@ -18,7 +18,7 @@
 	background-size: cover;
 	/* background-attachment: fixed; */
 	background-position: center;
-	color: #fff;
+	/* color: #fff; */
 	border-radius: 20px;
 }
 .btn {

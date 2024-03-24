@@ -1,19 +1,24 @@
-import { Menu } from "antd";
+import { Menu, Switch } from "antd";
 import { Header } from "antd/es/layout/layout";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { logout, useCurrentToken } from "../../redux/features/auth/authSlice";
 import { Link } from "react-router-dom";
+import { selectTheme, setTheme } from "../../redux/features/theme/themeSlice";
 
 
 const NavBar = () => {
     const token = useAppSelector(useCurrentToken);
+    const theme = useAppSelector(selectTheme)
     const dispatch = useAppDispatch();
+
     const handleLogOut = () => {
         dispatch(logout());
     }
 
 
-
+    const handleThemeChange = () => {
+        dispatch(setTheme(theme === 'light' ? 'dark' : 'light'));
+    }
 
     // const {
     //     token: { colorBgContainer, borderRadiusLG },
@@ -37,13 +42,13 @@ const NavBar = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                color: '#fff',
+                // color: '#fff',
                 // paddingInline: 48,
-                backgroundColor: '#4096ff',
+                // backgroundColor: '#4096ff',
 
             }}
         >
-            <div className="demo-logo" style={{ display: 'flex', alignItems: 'center' }} >
+            <div className="demo-logo" style={{ flex: 1, display: 'flex', alignItems: 'center' }} >
                 <Link style={{ width: '44px', height: '44px' }} to='/'>
                     <img style={{ width: '44px', height: '44px' }} src="logo.jpg" alt="logo" />
                 </Link>
@@ -53,10 +58,11 @@ const NavBar = () => {
                 theme="dark"
                 mode="horizontal"
                 defaultSelectedKeys={['home']}
-                style={{ minWidth: 0, backgroundColor: '#4096ff', }}
+                style={{ minWidth: 0, flex: 1 }}
             >
                 <Menu.Item key="home"><Link to='/'>Home</Link></Menu.Item>
                 <Menu.Item key="all-supply"><Link to='/supplies'>All Supply</Link></Menu.Item>
+
 
                 {
                     token ? (
@@ -67,6 +73,14 @@ const NavBar = () => {
                     ) :
                         <Menu.Item key="login"><Link to='/login'>Login</Link></Menu.Item>
                 }
+                <Menu.Item key="theme" style={{ backgroundColor: 'transparent' }}>
+                    <Switch
+
+                        checked={theme === 'dark'}
+                        onChange={handleThemeChange}
+                        checkedChildren="Dark"
+                        unCheckedChildren="Light"
+                    /></Menu.Item>
             </Menu>
         </Header>
     );

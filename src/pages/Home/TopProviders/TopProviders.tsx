@@ -8,7 +8,7 @@ const TopProviders = () => {
 
 
     return (
-        <div style={{ textAlign: 'center', minHeight: '90vh', margin: '40px auto', backgroundColor: 'white', padding: '20px', maxWidth: '1200px', }}>
+        <div style={{ textAlign: 'center', minHeight: '90vh', margin: '40px auto', padding: '20px', maxWidth: '1200px', }}>
             <Title level={1} >Top Donation Providers</Title>
             <div className='container'>
 
