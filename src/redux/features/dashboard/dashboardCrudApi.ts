@@ -32,6 +32,9 @@ const dashboardCrudApi = baseApi.injectEndpoints({
 				body: testimonial,
 			}),
 		}),
+		getDonorsData: builder.query({
+			query: () => "/donors",
+		}),
 	}),
 });
 export const {
@@ -39,4 +42,5 @@ export const {
 	useUpdateSupplyMutation,
 	useCreateSupplyMutation,
 	useCreateTestimonialMutation,
+	useGetDonorsDataQuery,
 } = dashboardCrudApi;

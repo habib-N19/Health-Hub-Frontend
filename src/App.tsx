@@ -4,6 +4,7 @@ import DashboardLayout from "./components/Layout/DashboardLayout"
 import { useAppSelector } from "./redux/hooks"
 import { selectTheme } from "./redux/features/theme/themeSlice"
 import { ConfigProvider, theme } from "antd"
+import PrivateRoute from "./components/Layout/PrivateRoute"
 
 function App() {
   const themeLocal = useAppSelector(selectTheme)
@@ -38,8 +39,10 @@ function App() {
     } >
       <>
         {
-          isDashboard ? <DashboardLayout >
-          </DashboardLayout> : <MainLayout />
+          isDashboard ? <PrivateRoute>
+            <DashboardLayout />
+          </PrivateRoute>
+            : <MainLayout />
         }
       </>
     </ConfigProvider >
